@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "agentmama": {
+      "type": "http",
+      "url": "https://mcp.agentmama.ai/mcp"
+    }
+  }
+}

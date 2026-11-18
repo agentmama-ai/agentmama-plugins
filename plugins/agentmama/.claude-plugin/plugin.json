@@ -1,0 +1,14 @@
+{
+  "name": "agentmama",
+  "displayName": "AgentMama",
+  "version": "0.1.0",
+  "description": "Work your AgentMama account's marketing data together with Mama Knowledge, the up-to-date marketing practice knowledge base: diagnosis, audits, recommendations, reports and action cards.",
+  "author": {
+    "name": "AgentMama",
+    "url": "https://agentmama.ai"
+  },
+  "homepage": "https://agentmama.ai",
+  "privacyPolicyUrl": "https://agentmama.ai/privacy-policy/",
+  "license": "Apache-2.0",
+  "keywords": ["marketing", "google-ads", "meta-ads", "ecommerce", "analytics"]
+}
