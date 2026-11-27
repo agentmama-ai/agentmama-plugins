@@ -4,7 +4,7 @@ Connects your assistant (Claude, ChatGPT or Codex) to your
 [AgentMama](https://agentmama.ai) account and teaches it to work your
 marketing data together with Mama Knowledge, AgentMama's knowledge base of
 current marketing practice. Ask about account performance, audits, Google
-Ads, Meta, Merchant Center, GA4, TikTok or Microsoft Ads, budgets, bidding,
+Ads, Meta, TikTok, LinkedIn Ads, Merchant Center or GA4, budgets, bidding,
 creative, feeds, search terms or measurement, and the assistant answers from
 your account's own figures, checked against what leading practitioners do
 today.
