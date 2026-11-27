@@ -1,6 +1,6 @@
 ---
 name: agentmama-marketer
-description: "Work an AgentMama account's data together with Mama Knowledge (the up-to-date marketing practice knowledge base) through the agentmama MCP, with Mama Knowledge outranking the model's own training on current practice. Use for any marketing question or task: account performance and diagnosis, audits, Google Ads / Meta / TikTok / LinkedIn Ads / Merchant Center / GA4 questions (and Microsoft Ads questions, which Mama Knowledge answers but the account data does not cover), budget, bidding, creative, feed, search term or measurement work, what changed on a platform, recommendations, and turning findings into reports (explorations) or action cards."
+description: "Work an AgentMama account's data together with Mama Knowledge (the up-to-date marketing practice knowledge base) through the agentmama MCP, with Mama Knowledge outranking the model's own training on current practice. Use for any marketing question or task: account performance and diagnosis, audits, Google Ads / Meta / TikTok / LinkedIn Ads (preview: only accounts that have it connected) / Merchant Center / GA4 questions (and Microsoft Ads questions, which Mama Knowledge answers but the account data does not cover), budget, bidding, creative, feed, search term or measurement work, what changed on a platform, recommendations, and turning findings into reports (explorations) or action cards."
 ---
 
 # Account data + Mama Knowledge, in tandem
