@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "agentmama": {
+      "type": "streamable-http",
+      "url": "https://mcp.agentmama.ai/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            },
+            "defaultScopes": [
+              "action:author",
+              "platform:read",
+              "change:write",
+              "exploration:write",
+              "openid",
+              "email"
+            ],
+            "oidcUserinfoEndpoint": "https://mcp.agentmama.ai/userinfo"
+          }
+        }
+      }
+    }
+  }
+}

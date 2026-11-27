@@ -1,6 +1,6 @@
 {
   "name": "agentmama-plugins",
-  "description": "AgentMama's plugins for Claude",
+  "description": "AgentMama's plugins for Claude, ChatGPT and Codex",
   "owner": {
     "name": "AgentMama",
     "url": "https://agentmama.ai"

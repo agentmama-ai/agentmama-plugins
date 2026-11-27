@@ -1,12 +1,13 @@
-# AgentMama for Claude
+# AgentMama for Claude, ChatGPT and Codex
 
-Connects Claude to your [AgentMama](https://agentmama.ai) account and teaches
-it to work your marketing data together with Mama Knowledge, AgentMama's
-knowledge base of current marketing practice. Ask about account performance,
-audits, Google Ads, Meta, Merchant Center, GA4, TikTok or Microsoft Ads,
-budgets, bidding, creative, feeds, search terms or measurement, and Claude
-answers from your account's own figures, checked against what leading
-practitioners do today.
+Connects your assistant (Claude, ChatGPT or Codex) to your
+[AgentMama](https://agentmama.ai) account and teaches it to work your
+marketing data together with Mama Knowledge, AgentMama's knowledge base of
+current marketing practice. Ask about account performance, audits, Google
+Ads, Meta, Merchant Center, GA4, TikTok or Microsoft Ads, budgets, bidding,
+creative, feeds, search terms or measurement, and the assistant answers from
+your account's own figures, checked against what leading practitioners do
+today.
 
 ## Install in Claude Code
 
@@ -14,22 +15,29 @@ practitioners do today.
 /plugin install agentmama --marketplace agentmama-ai/agentmama-plugins
 ```
 
+## Install in ChatGPT or Codex
+
+Install AgentMama from OpenAI's plugin directory, or add this repo as a
+marketplace with `codex plugin marketplace add agentmama-ai/agentmama-plugins`.
+
 ## What's inside
 
 - **`agentmama` MCP server**: the remote server at
-  `https://mcp.agentmama.ai/mcp`. It gives Claude read access to your account
-  data and Mama Knowledge, and the tools to create reports (explorations) and
-  action cards in AgentMama.
-- **`agentmama-marketer` skill**: how Claude combines the two sources:
+  `https://mcp.agentmama.ai/mcp`. It gives the assistant read access to your
+  account data and Mama Knowledge, and the tools to create reports
+  (explorations) and action cards in AgentMama.
+- **`agentmama-marketer` skill**: how the assistant combines the two sources:
   orient on the account and its decisions, frame the question with current
   practice, pull the figures, reconcile the two, and deliver recommendations
   that cite both.
 
 ## Requirements
 
-An AgentMama account. The first time Claude uses a tool, it opens AgentMama's
-sign-in in your browser (OAuth). Claude sees only the accounts your user can
-see.
+An AgentMama account. The first time the assistant uses a tool, it opens
+AgentMama's sign-in in your browser (OAuth). The assistant sees only the
+accounts your user can see. ChatGPT also reads your email address and
+whether it is verified (OpenID Connect), which a ChatGPT workspace can use
+to restrict which email domains may connect.
 
 ## Data and network use
 
@@ -37,8 +45,8 @@ see.
   over HTTPS, signed in as you.
 - Questions and queries about your account are sent to AgentMama and answered
   from your account's data there.
-- Mama Knowledge receives marketing topics only. The skill tells Claude never
-  to send account names, customer data or figures to it.
+- Mama Knowledge receives marketing topics only. The skill tells the
+  assistant never to send account names, customer data or figures to it.
 - Nothing is sent to any other service.
 
 ## Writes

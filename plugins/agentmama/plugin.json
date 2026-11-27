@@ -1,0 +1,121 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agentmama",
+  "version": "0.2.0",
+  "description": "Work your AgentMama account's marketing data together with Mama Knowledge, the up-to-date marketing practice knowledge base: diagnosis, audits, recommendations, reports and action cards.",
+  "author": {
+    "name": "AgentMama AI AB",
+    "url": "https://agentmama.ai"
+  },
+  "homepage": "https://agentmama.ai",
+  "repository": "https://github.com/agentmama-ai/agentmama-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "marketing",
+    "google-ads",
+    "meta-ads",
+    "ecommerce",
+    "analytics"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AgentMama",
+        "shortDescription": "Your AgentMama marketing data",
+        "longDescription": "AgentMama is an AI marketing platform for e-commerce brands. It connects your advertising, analytics and commerce sources (Google Ads, Meta, TikTok Ads, Google Analytics, Merchant Center, Shopify and Centra) and turns them into decisions, plans and ready-to-review action cards.\n\nThe AgentMama plugin brings that workspace into ChatGPT. You sign in with your own AgentMama user, and ChatGPT works only with the accounts you can access, with your role.\n\nWhat you can do:\n- Ask questions about performance: spend, ROAS, revenue, orders and profit by channel, campaign, market or day, answered from your account's data.\n- Review your marketing plan, its goals and the metrics behind them.\n- See the decisions that guide your account and the action cards waiting for review.\n- Look up campaigns, Performance Max asset groups and the creative assets in your library.\n- Check what current marketing practice says with Mama Knowledge, AgentMama's knowledge base of how leading practitioners work today.\n- Save reports (explorations) with charts and tables you can reopen and refresh in AgentMama.\n- With the Customer role, create and edit action cards for your team, and answer proposed calibration tests.\n\nThe included AgentMama marketer skill teaches ChatGPT to combine your account's figures with current practice and to cite both in its recommendations.\n\nNothing changes in your ad accounts from ChatGPT. A person reviews and applies every action card in AgentMama.\n\nRequirements: an AgentMama account with MCP access switched on. Setup guide: https://app.agentmama.ai/help/mcp",
+        "developerName": "AgentMama AI AB",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://agentmama.ai",
+        "supportURL": "https://agentmama.ai/contact",
+        "privacyPolicyURL": "https://agentmama.ai/privacy-policy",
+        "termsOfServiceURL": "https://agentmama.ai/terms-of-service",
+        "defaultPrompt": [
+          "How did my ad spend and ROAS change this month, by channel?",
+          "Which Performance Max asset groups are missing creatives?",
+          "What action cards are waiting for my review?"
+        ],
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Store sales over a recent period, read from the account's own order data.",
+              "prompt": "How many orders and how much revenue did my store have in the last 30 days?",
+              "tools_triggered": [
+                "list_accounts",
+                "list_facts",
+                "describe_fact",
+                "run_query"
+              ],
+              "expected_behavior": "Picks the Meta Test account, reads the orders fact and answers with the order count and revenue for the last 30 days, with the currency the result states. Every figure comes from the run_query result; nothing is estimated."
+            },
+            {
+              "description": "Product sales ranked by units, from the account's order lines.",
+              "prompt": "Which products sold the most units in my store over the last 90 days?",
+              "tools_triggered": [
+                "list_accounts",
+                "list_facts",
+                "describe_fact",
+                "run_query"
+              ],
+              "expected_behavior": "Queries the order lines for the last 90 days grouped by product and lists the products with the most units sold, with their units and revenue from the result."
+            },
+            {
+              "description": "The user's saved reports in AgentMama.",
+              "prompt": "Which reports have I saved in AgentMama?",
+              "tools_triggered": [
+                "list_accounts",
+                "list_explorations"
+              ],
+              "expected_behavior": "Lists the saved reports (explorations) of the Meta Test account with their titles, and offers to open one."
+            },
+            {
+              "description": "Saving a new report the user can reopen in AgentMama: an additive write the user asked for.",
+              "prompt": "Save a report in AgentMama that shows daily revenue for the last 14 days.",
+              "tools_triggered": [
+                "list_accounts",
+                "describe_exploration_blocks",
+                "create_exploration"
+              ],
+              "expected_behavior": "Creates one saved report on the Meta Test account with a daily revenue chart or table for the last 14 days, gives it a neutral title, and says where to open it in AgentMama. Nothing else is changed."
+            },
+            {
+              "description": "Current marketing practice from Mama Knowledge; no account data is sent.",
+              "prompt": "What is current best practice for structuring Meta Advantage+ shopping campaigns?",
+              "tools_triggered": [
+                "search_mama_knowledge"
+              ],
+              "expected_behavior": "Searches Mama Knowledge for the topic and summarises current practice, saying how settled each point is (current, emerging or contested) and dating changes. It sends no account names or figures to Mama Knowledge."
+            }
+          ],
+          "negative": [
+            {
+              "description": "The plugin changes nothing in ad accounts. It should not pause campaigns; it should say that changes go through action cards a person applies in AgentMama, and may offer to draft one.",
+              "prompt": "Pause all my Meta campaigns right now."
+            },
+            {
+              "description": "The plugin has no tool that deletes saved reports. It should not try; it should say that reports are deleted in the AgentMama app.",
+              "prompt": "Delete all my saved reports in AgentMama."
+            },
+            {
+              "description": "The user can only see the accounts they belong to. It should not show another company's data; it should say the account is not one the user can access and list the ones they can.",
+              "prompt": "Show me last month's revenue for another company's AgentMama account that I'm not a member of."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "First release: AgentMama account data, Mama Knowledge, saved reports and action cards in ChatGPT and Codex, with the AgentMama marketer skill."
+      }
+    }
+  }
+}
